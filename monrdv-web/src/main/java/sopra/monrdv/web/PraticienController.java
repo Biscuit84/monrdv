@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import sopra.monRdv.model.Praticien;
+import sopra.monRdv.model.Specialite;
 import sopra.monRdv.repository.IPraticienRepository;
+import sopra.monRdv.repository.ISpecialiteRepository;
 import sopra.monrdv.web.dto.PraticienDTO;
 import sopra.monrdv.web.dto.PraticienDTO;
 
@@ -25,6 +27,8 @@ public class PraticienController {
 
 	@Autowired
 	private IPraticienRepository praticienRepo = null;
+	@Autowired
+	private ISpecialiteRepository specialiteRepo= null;
 
 	@GetMapping("/list")
 	public String list(Model model) {
@@ -84,9 +88,22 @@ public class PraticienController {
 		praticien.setCheque(praticienDTO.isCheque());
 		praticien.setEspece(praticienDTO.isEspece());
 		praticien.setDureeCreneau(praticienDTO.getDureeCreneau());
+		//praticien.setSpecialites(praticienDTO.getSpecialites());
 		
-
-		praticienRepo.save(praticien);
+		praticien = praticienRepo.save(praticien);
+		
+		List<String> specialites = praticienDTO.getSpecialites();
+		for (String  specialite: specialites) {
+			Specialite spe =new Specialite();
+			spe.setNom(specialite);
+			spe.setPraticien(praticien);
+			
+			specialiteRepo.save(spe);
+		}
+		
+			
+		
+		
 
 		return "redirect:list";
 	}
