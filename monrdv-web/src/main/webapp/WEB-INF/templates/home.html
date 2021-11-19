@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
 <head>
 <meta charset="UTF-8">
 <title>Accueil</title>
 </head>
 <body>
-	<div class="card mt-3">
-		<form th:action="@{/utilisateur/connect}" method="post">
-			<input type="hidden" name="id" th:value="${utilisateur.id}">
-			<input type="hidden" name="version" th:value="${utilisateur.version}">
-			<div class="card-header bg-info text-white">
-				<h3>Connection</h3>
-			</div>
-			<div class="card-body">
-				<div class="form-group">
-					<label for="email">Email:</label> <input type="text"
-						class="form-control" id="email" name="email">
+	<section layout:fragment="monContenu">
+		<div class="card mt-3" style="max-width: 18rem;">
+			<form th:action="@{/utilisateur/connect}" method="post">
+				<div class="card-header bg-info text-white">
+					<h3>Connection</h3>
 				</div>
-				<div class="form-group">
-					<label for="motDePasse">Mot de passe:</label> <input type="text"
-						class="form-control" id="motDePasse" name="motDePasse">
+				<div class="card-body">
+					<div class="form-group">
+						<label for="email">Email:</label> <input type="text"
+							class="form-control" id="email" name="email">
+					</div>
+					<div class="form-group">
+						<label for="motDePasse">Mot de passe:</label> <input type="text"
+							class="form-control" id="motDePasse" name="motDePasse">
+					</div>
 				</div>
-			</div>
-			<div class="card-footer">
-				<div class="btn-group btn-group-lg float-right">
-					<button type="submit" class="btn btn-success" value="Connection">
-						<i class="bi bi-check-square"></i>
-					</button>
-				</div>
+				<div class="card-footer">
+					<div class="btn-group btn-group-lg float-center">
+						<button type="submit" class="btn btn-success" value="Connection">
+							<i class="bi bi-check-square"></i>
+						</button>
+					</div>
 
-			</div>
-		</form>
-	</div>
-	<div class="card mt-3">
-		<div class="btn-group btn-group-lg">
-			<a th:href="@{/utilisateur/add}" type="button" class="btn btn-info">
-				S'inscrire </a>
+				</div>
+			</form>
 		</div>
-	</div>
+		<div class="card mt-3" style="max-width: 18rem;">
+			<div class="btn-group btn-group-lg">
+				<a th:href="@{/utilisateur/add}" type="button" class="btn btn-info">
+					S'inscrire </a>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
