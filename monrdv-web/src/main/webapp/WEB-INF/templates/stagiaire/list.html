@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+<head>
+<meta charset="UTF-8">
+<title>Liste des stagiaires</title>
+</head>
+<body>
+	<section layout:fragment="monContenu">
+		<div class="card mt-3">
+			<div class="card-header bg-info text-white">
+				<h2>Liste des stagiaires</h2>
+			</div>
+			<div class="card-body">
+				<table class="table table-striped">
+					<tr>
+						<th>Identifiant</th>
+						<th>Civilite</th>
+						<th>Nom</th>
+						<th>Prénom</th>
+						<th>Adresse</th>
+						<th>Date de naissance</th>
+						<th></th>
+					</tr>
+					<tr th:each="stag : ${mesStagiaires}">
+						<td th:text="${stag.id}"></td>
+						<td>[[${stag.civilite}]]</td>
+						<td>[[${stag.nom}]]</td>
+						<td>[[${stag.prenom}]]</td>
+						<td>[[${stag.adresse?.rue}]] [[${stag.adresse?.codePostal}]] [[${stag.adresse?.ville}]]</td>
+						<td>[[${stag.dtNaissance}]]</td>
+						<td><div class="btn-group btn-group-sm">
+								<a class="btn btn-primary" th:href="@{/stagiaire/edit(id=${stag.id})}"><i class="bi bi-pencil-square"></i></a>
+								<a class="btn btn-info" th:href="@{/stagiaire/editWithPathVariable/{id}(id=${stag.id})}"><i class="bi bi-pencil-square"></i></a>
+								<a class="btn btn-danger" th:href="@{/stagiaire/remove(id=${stag.id})}"><i class="bi bi-trash"></i></a>
+							</div></td>
+					</tr>
+				</table>
+			</div>
+			<div class="card-footer">
+				<a th:href="@{/stagiaire/add}" class="btn btn-success btn-lg">
+					<i class="bi bi-plus-square"></i>
+				</a>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

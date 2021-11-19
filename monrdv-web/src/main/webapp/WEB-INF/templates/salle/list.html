@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+<head>
+<meta charset="UTF-8">
+<title>Listes des salles</title>
+</head>
+<body>
+	<section layout:fragment="monContenu">
+		<div class="card mt-3">
+			<div class="card-header bg-info text-white">
+				<h2>Listes des salles</h2>
+			</div>
+			<div class="card-body">
+				<table class="table table-striped">
+						<tr>
+							<th>Identifiant</th>
+							<th>Nom</th>
+							<th>Capacité</th>
+							<th>Vidéo Projecteur</th>
+							<th>Adresse</th>
+							<th></th>
+						</tr>
+						<tr th:each="salle : ${salles}">
+							<td th:text="${salle.id}"></td>
+							<td>[[${salle.nom}]]</td>
+							<td>[[${salle.capacite}]]</td>
+							<td>[[${salle.videoProjecteur}]]</td>
+							<td>[[${salle.rue}]] [[${salle.complement}]] [[${salle.codePostal}]] [[${salle.ville}]]</td>
+							<td><div class="btn-group btn-group-sm">
+								<a th:href="@{/salle/edit(id=${salle.id})}" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
+								<a th:href="@{/salle/remove(id=${salle.id})}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+							</div></td>
+						</tr>
+				</table>
+			</div>
+			<div class="card-footer">
+				<a th:href="@{/salle/add}" class="btn btn-success btn-lg">
+					<i class="bi bi-plus-square"></i>
+				</a>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+<head>
+<meta charset="UTF-8">
+<title>Edition de la salle</title>
+</head>
+<body>
+	<section layout:fragment="monContenu">
+		<div class="card mt-3">
+			<form th:action="@{/salle/save}" method="post">
+			<input type="hidden" name="id"	th:value="${salle.id}"> 
+			<div class="card-header bg-info text-white">
+				<h3>Edition de la salle</h3>
+			</div>
+			<div class="card-body">
+				<div class="form-group">
+					<label for="nom">Nom:</label> <input
+						type="text" class="form-control" id="nom"
+						name="nom" th:value="${salle.nom}">
+				</div>
+				<div class="form-group">
+					<label for="capacite">Capacité:</label> <input type="number"
+						class="form-control" id="capacite" name="capacite"
+						th:value="${salle.capacite}">
+				</div>
+				<div class="form-group">
+					<label for="videoProjecteur">Vidéo Projecteur:</label> <input type="checkbox"
+						class="form-control" id="videoProjecteur" name="videoProjecteur"
+						th:value="${salle.videoProjecteur}">
+				</div>
+				<div class="form-group">
+					<label for="rue">Rue:</label> <input type="text"
+						class="form-control" id="rue" name="rue"
+						th:value="${salle.rue}">
+				</div>
+				<div class="form-group">
+					<label for="complement">Complément:</label> <input type="text"
+						class="form-control" id="complement" name="complement"
+						th:value="${salle.complement}">
+				</div>
+				<div class="form-group">
+					<label for="codePostal">Code postal:</label> <input type="text"
+						class="form-control" id="codePostal" name="codePostal"
+						th:value="${salle.codePostal}">
+				</div>
+				<div class="form-group">
+					<label for="ville">Ville:</label> <input type="text"
+						class="form-control" id="ville" name="ville"
+						th:value="${salle.ville}">
+				</div>
+			</div>
+			<div class="card-footer">
+				<div class="btn-group btn-group-lg float-right">
+					<button type="submit" class="btn btn-success">
+						<i class="bi bi-check-square"></i>
+					</button>
+					<a th:href="@{/salle/cancel}" type="button" class="btn btn-warning">
+						<i class="bi bi-backspace"></i>
+					</a>
+				</div>
+			</div>
+			</form>
+		</div>
+
+	</section>
+
+</body>
+</html>

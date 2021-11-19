@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+<head>
+<meta charset="UTF-8">
+<title>evaluation.form.title</title>
+</head>
+<body>
+	<section layout:fragment="monContenu">
+		<div class="card mt-3">
+			<form th:action="@{/evaluation/saveBis}" method="post">
+			<input type="hidden" name="id"	th:value="${eval.id}"> 
+			<input type="hidden" name="version"	th:value="${eval.version}">
+			<div class="card-header bg-info text-white">
+				<h3>Edition de l'évaluation</h3>
+			</div>
+			<div class="card-body">
+				<div class="form-group">
+					<label for="comportemental">Note comportemental:</label> <input
+						type="number" class="form-control" id="comportemental"
+						name="comportemental" th:value="${eval.comportemental}">
+					<span class="text-danger" th:errors="${eval.comportemental}"></span>
+				</div>
+				<div class="form-group">
+					<label for="promotion">Note technique:</label> <input type="number"
+						class="form-control" id="technique" name="technique"
+						th:value="${eval.technique}">
+					<span class="text-danger" th:errors="${eval.technique}"></span>
+				</div>
+				<div class="form-group">
+					<label for="commentaires">Commentaires:</label> <input type="text"
+						class="form-control" id="commentaires" name="commentaires"
+						th:value="${eval.commentaires}">
+					<span class="text-danger" th:errors="${eval.commentaires}"></span>
+				</div>
+				<div class="form-group">
+					<label for="dtEvaluation">Date d'évaluation:</label> <input type="date"
+						class="form-control" id="dtEvaluation" name="dtEvaluation"
+						th:value="${eval.dtEvaluation}">
+					<span class="text-danger" th:errors="${eval.dtEvaluation}"></span>
+				</div>
+			</div>
+			<div class="card-footer">
+				<div class="btn-group btn-group-lg float-right">
+					<button type="submit" class="btn btn-success">
+						<i class="bi bi-check-square"></i>
+					</button>
+					<a th:href="@{/evaluation/cancel}" type="button" class="btn btn-warning">
+						<i class="bi bi-backspace"></i>
+					</a>
+				</div>
+			</div>
+			</form>
+		</div>
+
+	</section>
+
+</body>
+</html>

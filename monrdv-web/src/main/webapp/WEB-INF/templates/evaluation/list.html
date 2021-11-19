@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+<head>
+<meta charset="UTF-8">
+<title>Listes des évaluations</title>
+</head>
+<body>
+	<section layout:fragment="monContenu">
+		<div class="card mt-3">
+			<div class="card-header bg-info text-white">
+				<h2>Listes des évaluations</h2>
+			</div>
+			<div class="card-body">
+				<table id="evaluationTable" class="table table-striped">
+						<tr>
+							<th>Identifiant</th>
+							<th>Note comportemental</th>
+							<th>Note technique</th>
+							<th>Commentaires</th>
+							<th>Date d'évaluation</th>
+							<th></th>
+						</tr>
+						<tr th:each="eval : ${evaluations}">
+							<td th:text="${eval.id}"></td>
+							<td>[[${eval.comportemental}]]</td>
+							<td>[[${eval.technique}]]</td>
+							<td>[[${eval.commentaires}]]</td>
+							<td>[[${#dates.format(eval.dtEvaluation, 'dd/MM/yyyy')}]]</td>
+							<td><div class="btn-group btn-group-sm">
+								<a th:href="@{/evaluation/edit(id=${eval.id})}" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
+								<a th:href="@{/evaluation/remove(id=${eval.id})}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+							</div></td>
+						</tr>
+				</table>
+			</div>
+			<div class="card-footer">
+				<a th:href="@{/evaluation/add}" class="btn btn-success btn-lg">
+					<i class="bi bi-plus-square"></i>
+				</a>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
