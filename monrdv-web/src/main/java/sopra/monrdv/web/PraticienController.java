@@ -21,7 +21,7 @@ import sopra.monrdv.web.dto.PraticienDTO;
 
 @Controller
 @RequestMapping("/praticien")
-public class PraticienControler {
+public class PraticienController {
 
 	@Autowired
 	private IPraticienRepository praticienRepo = null;
