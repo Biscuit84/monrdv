@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+<head>
+<meta charset="UTF-8">
+<title>Accueil</title>
+</head>
+<body>
+	<section layout:fragment="monContenu">
+		<div class="card mt-3">
+			<form th:action="@{/utilisateur/new}" method="post">
+				<input type="hidden" name="id" th:value="${utilisateur.id}">
+				<input type="hidden" name="version"
+					th:value="${utilisateur.version}">
+				<div class="card-header bg-info text-white">
+					<h3>Creation de compte</h3>
+				</div>
+				<div class="card-body">
+					<div class="form-group">
+						<label for="type">Type de compte:</label> <select
+							class="form-control" id="type" name="type">
+							<option value="">Choisir</option>
+							<option th:each="type : ${utilisateur.type}" th:value="${utilisateur.type}">[[${utilisateur.type}]]</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="email">Email:</label> <input type="text"
+							class="form-control" id="email" name="email">
+					</div>
+					<div class="form-group">
+						<label for="motDePasse">Mot de passe:</label> <input type="text"
+							class="form-control" id="motDePasse" name="motDePasse">
+					</div>
+					<div class="form-group">
+						<label for="motDePasseConfirm">Confirmez le mot de passe:</label>
+						<input type="text" class="form-control" id="motDePasseConfirm"
+							name="motDePasseConfirm">
+					</div>
+				</div>
+				<div class="card-footer">
+					<div class="btn-group btn-group-lg float-right">
+						<button type="submit" class="btn btn-success"
+							value="Creer un compte">
+							<i class="bi bi-check-square"></i>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+</body>
+</html>
