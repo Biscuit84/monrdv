@@ -3,7 +3,7 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
-	<display-name>formation-web-spring</display-name>
+	<display-name>monrdv-web</display-name>
 
 	<!-- Chargement de la configuration spring du projet de persistence -->
 	<listener>
@@ -23,7 +23,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>sopra.monRdv.config.ApplicationConfig</param-value>
+		<param-value>sopra.monrdv.config.WebConfig</param-value>
 	</context-param>
 
 	<!-- Chargement de la configuration spring du projet Web (webmvc-context.xml) -->

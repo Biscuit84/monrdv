@@ -15,7 +15,7 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
 
 @Configuration
 @EnableWebMvc // Activation des annotations @Controller, @RequestMapping, ...
-@ComponentScan("sopra.formation.web") // Scanner le package où se situe les Controller
+@ComponentScan("sopra.monrdv.web") // Scanner le package où se situe les Controller
 public class WebConfig implements WebMvcConfigurer {
 
 	// Configuration des exclusions sur les urls ...../css/** vers un répertoire
