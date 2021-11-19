@@ -4,14 +4,14 @@
 	layout:decorator="layout.html">
 <head>
 <meta charset="UTF-8">
-<title>evaluation.form.title</title>
+<title>Formulaire Praticient</title>
 </head>
 <body>
 	<section layout:fragment="monContenu">
 		<div class="card mt-3">
 			<form th:action="@{/praticien/save}" method="post">
-			<input type="hidden" name="id"	th:value="${praticien.id}"> 
-			<input type="hidden" name="version"	th:value="${praticien.version}">
+<!-- 			<input type="hidden" name="id"	th:value="${praticien.id}">   -->
+<!-- 			<input type="hidden" name="version"	th:value="${praticien.version}">  -->
 			<div class="card-header bg-info text-white">
 				<h3>Edition du praticien</h3>
 			</div>
@@ -28,7 +28,7 @@
 					<label for="nom">Nom:</label> <input type="text"
 						class="form-control" id="nom" name="nom"
 						th:value="${praticien.nom}">
-					<span class="text-danger" th:errors="${praticien.technique}"></span>
+					<span class="text-danger" th:errors="${praticien.nom}"></span>
 				</div>
 				<div class="form-group">
 					<label for="commentaires">Prenom:</label> <input type="text"
@@ -52,10 +52,10 @@
 						<span class="text-danger" th:errors="${praticien.secteur}"></span>
 				</div>
 				<div class="form-group">
-					<label for="carteVital">Carte vital:</label> <input type="checkbox"
-						class="form-control" id="carteVital" name="carteVital"
-						th:value="${praticien.carteVital}">
-					<span class="text-danger" th:errors="${praticien.carteVital}"></span>
+					<label for="carteVitale">Carte vitale:</label> 
+					<input type="checkbox" class="form-control" id="carteVital" name="carteVitale"
+						th:value="${praticien.carteVitale}">
+					<span class="text-danger" th:errors="${praticien.carteVitale}"></span>
 				</div>
 				<div class="form-group">
 					<label for="photo">Photo:</label> <input type="text"
@@ -82,10 +82,10 @@
 					<span class="text-danger" th:errors="${praticien.dureeCreneau}"></span>
 				</div>
 				<div class="form-group">
-					<label for="specialite">Specialite:</label> <input type="text"
-						class="form-control" id="specialite" name="specialite"
-						th:value="${praticien.specialite}">
-					<span class="text-danger" th:errors="${praticien.specialite}"></span>
+					<label for="specialite">Specialites:</label> <input type="text"
+						class="form-control" id="specialites" name="specialites"
+						th:value="${praticien.specialites}">
+					<span class="text-danger" th:errors="${praticien.specialites}"></span>
 				</div>
 			<div class="card-footer">
 				<div class="btn-group btn-group-lg float-right">
