@@ -13,7 +13,7 @@
 	<mvc:annotation-driven/>
 	
 	<!-- Scanner le package où se situe les Controller -->
-	<context:component-scan base-package="sopra.formation.web"/>
+	<context:component-scan base-package="sopra.monrdv.web"/>
 
 	<!-- Configuration des exclusions sur les urls ...../css/** vers un répertoire physique -->
 	<mvc:resources location="/css/" mapping="/css/**" />
