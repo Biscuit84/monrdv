@@ -1,5 +1,8 @@
 package sopra.monrdv.web.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -7,6 +10,7 @@ import javax.persistence.Enumerated;
 import sopra.monRdv.model.Civilite;
 import sopra.monRdv.model.Praticien;
 import sopra.monRdv.model.Secteur;
+import sopra.monRdv.model.Specialite;
 
 public class PraticienDTO {
 
@@ -22,7 +26,7 @@ public class PraticienDTO {
 	private boolean cheque;
 	private boolean espece;
 	private Integer dureeCreneau;
-	
+	private List<String> specialites ;
 	
 	
 	
@@ -41,6 +45,9 @@ public class PraticienDTO {
 		this.cheque = praticien.isCheque();
 		this.espece = praticien.isEspece();
 		this.dureeCreneau = praticien.getDureeCreneau();
+		
+		for (Specialite  specialite: praticien.getSpecialites()) {
+			this.specialites.add(specialite.getNom());}
 	}
 	public PraticienDTO() {}
 	
@@ -110,6 +117,12 @@ public class PraticienDTO {
 	}
 	public void setDureeCreneau(Integer dureeCreneau) {
 		this.dureeCreneau = dureeCreneau;
+	}
+	public List<String> getSpecialites() {
+		return specialites;
+	}
+	public void setSpecialites(List<String> specialites) {
+		this.specialites = specialites;
 	}
 	
 	
