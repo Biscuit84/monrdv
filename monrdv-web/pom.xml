@@ -19,7 +19,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>sopra.formation</groupId>
-			<artifactId>formation-spring-data-jpa-prof</artifactId>
+			<artifactId>monRdv-jpa</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
