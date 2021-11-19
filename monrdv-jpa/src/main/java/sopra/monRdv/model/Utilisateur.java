@@ -33,6 +33,15 @@ public class Utilisateur {
 	@OneToMany(mappedBy = "utilisateur")
 	private List<Patient> patients = new ArrayList<Patient>();
 
+	
+	
+	public Utilisateur(String email, String motDePasse, Type type) {
+		super();
+		this.email = email;
+		this.motDePasse = motDePasse;
+		this.type = type;
+	}
+
 	public Utilisateur() {
 		super();
 	}
