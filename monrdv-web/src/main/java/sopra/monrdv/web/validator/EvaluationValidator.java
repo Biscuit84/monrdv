@@ -1,4 +1,4 @@
-package sopra.formation.web.validator;
+package sopra.monrdv.web.validator;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;

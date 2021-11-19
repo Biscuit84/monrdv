@@ -1,4 +1,4 @@
-package sopra.formation.web.dto;
+package sopra.monrdv.web.dto;
 
 import sopra.formation.model.Salle;
 

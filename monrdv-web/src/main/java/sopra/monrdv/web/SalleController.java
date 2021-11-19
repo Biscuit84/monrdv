@@ -1,4 +1,4 @@
-package sopra.formation.web;
+package sopra.monrdv.web;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import sopra.formation.model.Adresse;
 import sopra.formation.model.Salle;
 import sopra.formation.repository.ISalleRepository;
-import sopra.formation.web.dto.SalleDTO;
+import sopra.monrdv.web.dto.SalleDTO;
 
 @Controller
 @RequestMapping("/salle")

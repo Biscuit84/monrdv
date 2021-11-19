@@ -1,4 +1,4 @@
-package sopra.formation.web;
+package sopra.monrdv.web;
 
 import java.util.Date;
 import java.util.List;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import sopra.formation.model.Evaluation;
 import sopra.formation.repository.IEvaluationRepository;
-import sopra.formation.web.validator.EvaluationValidator;
+import sopra.monrdv.web.validator.EvaluationValidator;
 
 @Controller
 @RequestMapping("/evaluation")
