@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import sopra.monRdv.model.Creneau;
 import sopra.monRdv.repository.ICreneauRepository;
 
-@Controller
-@RequestMapping("/Creneau")
+//@Controller
+@RequestMapping("/creneau")
 public class CreneauController {
 
 	
