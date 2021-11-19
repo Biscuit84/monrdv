@@ -23,7 +23,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>sopra.formation.config.ApplicationConfig</param-value>
+		<param-value>sopra.monRdv.config.ApplicationConfig</param-value>
 	</context-param>
 
 	<!-- Chargement de la configuration spring du projet Web (webmvc-context.xml) -->
@@ -51,7 +51,7 @@
 
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>sopra.formation.config.WebConfig</param-value>
+			<param-value>sopra.monrdv.config.WebConfig</param-value>
 		</init-param>
 
 		<load-on-startup>1</load-on-startup>
